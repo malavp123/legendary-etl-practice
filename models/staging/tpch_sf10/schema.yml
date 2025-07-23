@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: snowflake_sample_data
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: tpch_sf10
+    tables:
+      - name: orders
+        description: Raw order data
+        columns:
+          - name: o_orderkey
+            tests: [not_null, unique]
+          - name: o_orderdate
+            description: "Date when the order was placed"
+          - name: o_orderstatus
+            description: "Status of the order"
+          - name: o_totalprice
+            description: "Total Price of the order"
+          - name: o_custkey
+            description: "Customer ID of the person who placed the order"
+          - name: o_orderpriority
+            description: ""
+          - name: o_clerk
+            description: ""
+          - name: o_shippriority
+            description: ""
+          - name: o_comment
+            description: ""
+          
