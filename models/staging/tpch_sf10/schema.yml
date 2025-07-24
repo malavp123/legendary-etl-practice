@@ -26,4 +26,34 @@ sources:
             description: ""
           - name: o_comment
             description: ""
-          
+      
+      - name: Customer
+        columns: 
+          - name: c_acctbal
+            description: ""
+          - name: c_custkey
+            description: ""
+          - name: c_address
+            description: ""
+          - name: c_nationkey
+            description: ""
+          - name: c_phone
+            description: ""
+          - name: c_mktsegment
+            description: ""
+          - name: c_comment
+            description: ""
+        
+      - name: Nation
+        columns:
+          - name: n_comment
+            description: ""
+          - name: n_name
+            description: ""
+          - name: n_nationkey
+            description: ""
+          - name: n_regionkey
+            description: ""
+            
+
+
