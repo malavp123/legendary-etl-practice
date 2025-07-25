@@ -1,59 +1,115 @@
 version: 2
 
-sources:
-  - name: snowflake_sample_data
-    database: SNOWFLAKE_SAMPLE_DATA
-    schema: tpch_sf10
-    tables:
-      - name: orders
-        description: Raw order data
-        columns:
-          - name: o_orderkey
-            tests: [not_null, unique]
-          - name: o_orderdate
-            description: "Date when the order was placed"
-          - name: o_orderstatus
-            description: "Status of the order"
-          - name: o_totalprice
-            description: "Total Price of the order"
-          - name: o_custkey
-            description: "Customer ID of the person who placed the order"
-          - name: o_orderpriority
-            description: ""
-          - name: o_clerk
-            description: ""
-          - name: o_shippriority
-            description: ""
-          - name: o_comment
-            description: ""
-      
-      - name: Customer
-        columns: 
-          - name: c_acctbal
-            description: ""
-          - name: c_custkey
-            description: ""
-          - name: c_address
-            description: ""
-          - name: c_nationkey
-            description: ""
-          - name: c_phone
-            description: ""
-          - name: c_mktsegment
-            description: ""
-          - name: c_comment
-            description: ""
-        
-      - name: Nation
-        columns:
-          - name: n_comment
-            description: ""
-          - name: n_name
-            description: ""
-          - name: n_nationkey
-            description: ""
-          - name: n_regionkey
-            description: ""
-            
+models:
+  - name: stg_orders
+    description: ""
+    columns:
+      - name: order_id
+        data_type: number
+        description: ""
+      - name: customer_id
+        data_type: number
+        description: ""
+      - name: order_status
+        data_type: varchar
+        description: ""
+      - name: total_price
+        data_type: number
+        description: ""
+      - name: order_date
+        data_type: date
+        description: ""            
+  - name: stg_customer
+    columns: 
+      - name: c_acctbal
+        description: ""
+      - name: c_custkey
+        description: ""
+      - name: c_address
+        description: ""
+      - name: c_nationkey
+        description: ""
+      - name: c_phone
+        description: ""
+      - name: c_mktsegment
+        description: ""
+      - name: c_comment
+        description: ""
+  - name: Nation
+    columns:
+      - name: n_comment
+        description: ""
+      - name: n_name
+        description: ""
+      - name: n_nationkey
+        description: ""
+      - name: n_regionkey
+        description: ""  
+  - name: stg_lineitem
+    description: ""
+    columns:
+      - name: l_orderkey
+        data_type: number
+        description: ""
+
+      - name: l_partkey
+        data_type: number
+        description: ""
+
+      - name: l_suppkey
+        data_type: number
+        description: ""
+
+      - name: l_linenumber
+        data_type: number
+        description: ""
+
+      - name: l_quantity
+        data_type: number
+        description: ""
+
+      - name: l_extendedprice
+        data_type: number
+        description: ""
+
+      - name: l_discount
+        data_type: number
+        description: ""
+
+      - name: l_tax
+        data_type: number
+        description: ""
+
+      - name: l_returnflag
+        data_type: varchar
+        description: ""
+
+      - name: l_linestatus
+        data_type: varchar
+        description: ""
+
+      - name: l_shipdate
+        data_type: date
+        description: ""
+
+      - name: l_commitdate
+        data_type: date
+        description: ""
+
+      - name: l_receiptdate
+        data_type: date
+        description: ""
+
+      - name: l_shipinstruct
+        data_type: varchar
+        description: ""
+
+      - name: l_shipmode
+        data_type: varchar
+        description: ""
+
+      - name: l_comment
+        data_type: varchar
+        description: ""
 
 
